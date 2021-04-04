@@ -18,3 +18,12 @@ create table t_playa(
   playa_cap int
 );
 
+create table t_registro(
+  reg_id int not null auto_increment primary key,
+  fech_fechin datetime,
+  reg_fechfin datetime,
+  playa_iod int,
+  veh_id int,
+  foreing key (playa_id) references t_playa(playa_id),
+)
+
