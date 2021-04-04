@@ -28,3 +28,16 @@ create table t_registro(
    foreing key(veh_id) references
 )
 
+--iNSERTAR DATOS A LA TABLA T_VEHICULO
+insert into  t_vehiculo( veh_placa ,veh_marca, veh_anio, veh_modelo, veh_color) values 
+('A3A133','SUSUKI',2010,'JETTA','NEGRO'),
+('A3P183','MAZDA',2009,'MZ56','AZUL'),
+('A5A122','HYUNDAY',2020,'HY200','NEGRO'),
+
+--iNSERTAR DATOS A LA TABLA T_PLAYA
+
+insert into t_playa(playa_dir, playa_cap) values
+('Av. Arequipa 1587', 50 ),
+(Av. 'Javier Prado',200 )
+
+
