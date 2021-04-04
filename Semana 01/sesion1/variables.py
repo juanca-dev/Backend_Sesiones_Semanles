@@ -5,9 +5,12 @@ if ecivil == "C":
     valorec = "CASADO"
 elif ecivil == "V":
     valorec = "VIUDO"
-elif ecivil == "D":
+elif ecivil == "":
     valorec = "DIVORCIADO"
 else:
     valorec = "SOLTERO"
 print("hola", nombre, "Su estado civil es:", valorec)
 print(" hola como estan todos aqui")
+
+
+
