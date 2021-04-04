@@ -25,5 +25,6 @@ create table t_registro(
   playa_iod int,
   veh_id int,
   foreing key (playa_id) references t_playa(playa_id),
+   foreing key(veh_id) references
 )
 
