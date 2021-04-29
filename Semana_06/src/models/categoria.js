@@ -11,7 +11,7 @@ export default () =>
         primaryKey: true,
         field: "id",
         autoIncrement: true,
-        unique: true
+        unique: true,
       },
       categoriaNombre: {
         type: DataTypes.STRING(45),

@@ -1,4 +1,4 @@
-import categoria_model from "../models/categoria";
+import categoria_model from "../routes/categoria";
 import estante_model from "../models/estante";
 import producto_model from "../models/producto";
 import productoEstante from "../models/productoEstante";
