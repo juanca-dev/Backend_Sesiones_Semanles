@@ -1,6 +1,7 @@
 import categoria_model from "../models/categoria";
 import estante_model from "../models/estante";
 import producto_model from "../models/producto";
+import productoEstante from "../models/productoEstante";
 import producto_estante_model from "../models/productoEstante";
 import rol_model from "../models/rol";
 import usuario_model from "../models/usuario";
@@ -60,4 +61,7 @@ Usuario.belongsTo(Rol, {
   foreignKey: "roles_id",
 });
 
+//Usuario.sync({ force: true});
+
 // Usuario.sync({ force: true });
+

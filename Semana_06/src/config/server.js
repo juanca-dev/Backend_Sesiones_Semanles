@@ -27,7 +27,7 @@ export default class Server {
         // esto va a trata de conectarse con el servidor usando las credenciales definidas anteriormente
         // alter => si hubo algun cambio en la bd volvera a generar SOLAMENTE esos cambios
         // force => RESETEA (borra) toda la bd y su contenido y lo vuelve a crear de 0, NUNCA USAR ESTO EN MODO DE PRODUCCION
-        await conexion.sync();
+        await conexion.sync({force: false});
         console.log("Base de datos sincronizada correctamente");
       } catch (error) {
         console.error(error);
