@@ -1,29 +1,23 @@
-import { Schema } from "mongoose";
+import { Schema } from 'mongoose'
 
-export const tareaSchema = new Schema(
-  {
-    tareaFecha: {
-      type: Schema.Types.Date,
-      alias: "fecha",
-      required: true,
-    },
-    tareaNombre: {
-      type: Schema.Types.String,
-      minLength: 3,
-      maxLength: 40,
-      alias: "nombre",
-      required: true,
-    },
-    tareaLugar: {
-      type: Schema.Types.String,
-      alias: "lugar",
-    },
-    tareaEstado: {
-      type: Schema.Types.String,
-      alias: "estado",
-    },
+export const tareaSchema = new Schema({
+  fecha: {
+    type: Date,
+    required: true,
   },
-  {
-    timestamps: false,
+  nombre: {
+    type: String,
+    required: true,
+    minLength: 3,
+    maxLength: 40,
+  },
+  lugar: {
+    type: String,
+  },
+  estado: {
+    type: String,
+    required: true,
   }
-);
+},{
+  timestamps: false
+})

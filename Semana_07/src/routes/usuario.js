@@ -5,3 +5,5 @@ export const usuario_router = Router();
 
 usuario_router.post("/registro", usuario_controller.registro);
 usuario_router.post("/login", usuario_controller.login);
+
+export default router

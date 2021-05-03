@@ -1,5 +1,8 @@
 import { Usuario } from "../models/usuario";
 import { hashSync, compareSync } from "bcrypt";
+import  jwt  from "jsonwebtoken";
+//
+//require("dotenv").config();
 
 export const registro = async (req, res) => {
   // hay dos formas de hacer una creacion
@@ -75,6 +78,12 @@ export const login = async (req, res) => {
   }
   const resultado = compareSync(password, usuario.usuarioPassword);
   if (resultado) {
+
+    //para implementar el token
+    const token = jwt.sign({_id: usuario._id},process.env,JWT_SECRET,{
+      expiresIn: 86400,
+    })
+
     /**
      * ! EN VEZ DE REALIZAR EL RETO 20 y 21 hacer lo siguiente
      * TODO: Primer parte: implementar jwt
@@ -86,9 +95,10 @@ export const login = async (req, res) => {
 
     return res.json({
       success: true,
-      content: null,
+      content: token,
       message: "bienvenido",
     });
+    
   }
   return res.status(401).json({
     success: false,
