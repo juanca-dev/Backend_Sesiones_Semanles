@@ -19,7 +19,6 @@ supermercados = []
 def ruta_inicial():
     return 'Servidor funcionando exitosamente'
 
-
 @app.route("/supermercados", methods=['GET', 'POST'])
 def manejo_supermercados():
     print(request.method)
@@ -47,8 +46,41 @@ def manejo_supermercados():
 @app.route("/supermercados/<int:id_super>", methods=['GET', 'PUT', 'DELETE', 'PATCH'])
 def manejo_supermercado(id_super):
     print(id_super)
+# realizar el metodo get (devolver un supermercado dependiendo su ID => posicion en esa lista),
+#  delete (eliminar ese supermercado de la lista)
+    if request.method=='GET':
+        if len(supermercados) < id_super:
+           return {
+            "success": False,
+            "content": None,
+            "message": "Indice incorrecto"
+           }, 400
+        return {
+            "success": True,
+            "content": supermercados[id_super-1],
+            "message": None
+           }
+        # aq    qui debe ir el get
+    if request.method=='DELETE':
+        # aqui debe ir el delete
+        if len(supermercados) < id_super:
+           return {
+            "success": False,
+            "content": None,
+            "message": "Indice incorrecto"
+           }, 400
+        supermercados.pop(id_super-1)
+        return {
+            "success": True,
+            "content": None,
+            "message": None
+        }
     return 'ok'
-
+    
 
 # 127.0.0.1:5000/supermercado?nombre=supera&capacidad=1000
 app.run(debug=True)
+
+
+
+#todo esto es un crud basico
